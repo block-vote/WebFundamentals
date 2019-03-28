@@ -1,30 +1,30 @@
 project_path: /web/tools/_project.yaml
 book_path: /web/tools/_book.yaml
-description: Learn how to navigate the Chrome DevTools JavaScript Console.
+description: The 2 main uses of the Console are logging messages and running JavaScript.
 
-{# wf_updated_on: 2018-07-27 #}
+{# wf_updated_on: 2019-03-28 #}
 {# wf_published_on: 2015-05-10 #}
 {# wf_blink_components: Platform>DevTools #}
 
-# Using the Console {: .page-title }
+# Chrome DevTools Console Overview {: .page-title }
 
 {% include "web/_shared/contributors/kaycebasques.html" %}
-{% include "web/_shared/contributors/andismith.html" %}
-{% include "web/_shared/contributors/megginkearney.html" %}
-{% include "web/_shared/contributors/pbakaus.html" %}
 
-Learn how to: open the DevTools Console, stack redundant 
-messages or display them on their own lines, clear or persist 
-output or save it to a file, filter output, and access additional
-Console settings.
+This page provides a brief overview of the Console in Chrome DevTools. The 2 main uses
+of the Console are viewing logged messages and running JavaScript.
 
-### TL;DR {: .hide-from-toc }
-- Open the Console as a dedicated panel or as a drawer next to any other panel.
-- Stack redundant messages, or display them on their own lines.
-- Clear or persist output between pages, or save it to a file.
-- Filter output by severity level, by hiding network messages, or by regular expression patterns.
+## Open the Console {: #open }
 
-## Opening the Console
+You can use the Console as a panel:
+
+Or a drawer:
+
+### Open the Console panel {: #panel }
+
+To quickly open the **Console** panel when DevTools is not open, press <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd>
+or <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>J</kbd> (Mac)
+
+### Open the Console drawer {: #drawer }
 
 Access the Console as a full-screen, dedicated panel:
 
