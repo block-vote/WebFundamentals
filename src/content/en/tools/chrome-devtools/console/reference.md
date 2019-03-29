@@ -34,6 +34,8 @@ Press <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd> or
   </figcaption>
 </figure>
 
+TODO finish Command Menu doc and link to that
+
 ### Open the Console tab in the Drawer {: #drawer }
 
 [mainmenu]: /web/tools/chrome-devtools/images/shared/main-menu.png
@@ -59,6 +61,8 @@ The Drawer pops up at the bottom of your DevTools window, with the **Console** t
     <b>Figure X</b>. The Console tab in the Drawer.
   </figcaption>
 </figure>
+
+TODO finish Command Menu doc and link to that
 
 ## Feedback {: #feedback }
 
