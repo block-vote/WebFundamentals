@@ -1,58 +1,23 @@
 project_path: /web/tools/_project.yaml
 book_path: /web/tools/_book.yaml
-description: The 2 main uses of the Console are logging messages and running JavaScript.
+description: The main uses of the Chrome DevTools Console are logging messages and running JavaScript.
 
 {# wf_updated_on: 2019-03-28 #}
 {# wf_published_on: 2015-05-10 #}
 {# wf_blink_components: Platform>DevTools #}
 
-# Chrome DevTools Console Overview {: .page-title }
+# Console Overview {: .page-title }
 
 {% include "web/_shared/contributors/kaycebasques.html" %}
 
-This page provides a brief overview of the Console in Chrome DevTools. The 2 main uses
-of the Console are viewing logged messages and running JavaScript.
+This page briefly explains the main uses of the Console in Chrome DevTools, which are:
+
+* Viewing logged messages
+* Running JavaScript
 
 ## Open the Console {: #open }
 
-You can use the Console as a panel:
-
-Or a drawer:
-
-### Open the Console panel {: #panel }
-
-To quickly open the **Console** panel when DevTools is not open, press <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd>
-or <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>J</kbd> (Mac)
-
-### Open the Console drawer {: #drawer }
-
-Access the Console as a full-screen, dedicated panel:
-
-![The Console panel](images/console-panel.png)
-
-Or as a drawer that opens next to any other panel:
-
-![The Console drawer](images/console-drawer.png)
-
-### Open as panel
-
-To open the dedicated **Console** panel, either:
-
-* Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd> (Windows / Linux) or
-  <kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd class="kbd">J</kbd> (Mac).
-* If DevTools is already open, press the **Console** button.
-
-When you open the Console panel, the Console drawer collapses automatically.
-
-### Open as drawer
-
-To open the Console as a drawer next to any other panel, either:
-
-* Press <kbd>Esc</kbd> while DevTools is in focus.
-* Press the **Customize and control DevTools** button and then press 
-  **Show console**.
-
-![Show console](images/show-console.png)
+See [Open the Console](/web/tools/chrome-devtools/console/reference#open).
 
 ## Message stacking
 

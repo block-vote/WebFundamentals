@@ -83,7 +83,7 @@ toc:
     section:
     - title: Track Which Element Has Focus
       path: /web/tools/chrome-devtools/accessibility/focus
-- title: Simulate Mobile Devices
+- title: Mobile Simulation
   section:
   - title: Overview
     path: /web/tools/chrome-devtools/device-mode/
@@ -119,6 +119,8 @@ toc:
     path: /web/tools/chrome-devtools/console/
   - title: Get Started
     path: /web/tools/chrome-devtools/console/get-started
+  - title: UI Reference
+    path: /web/tools/chrome-devtools/console/reference
   - title: API Reference
     path: /web/tools/chrome-devtools/console/api
   - title: Utilities API Reference
@@ -186,6 +188,8 @@ toc:
     path: /web/tools/chrome-devtools/memory-problems/allocation-profiler
 - title: Workspaces
   path: /web/tools/chrome-devtools/workspaces/
+- title: The Command Menu
+  path: /web/tools/chrome-devtools/command-menu/
 - title: Progressive Web Apps
   path: /web/tools/chrome-devtools/progressive-web-apps
 - title: Security
