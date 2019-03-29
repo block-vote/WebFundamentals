@@ -188,7 +188,7 @@ toc:
     path: /web/tools/chrome-devtools/memory-problems/allocation-profiler
 - title: Workspaces
   path: /web/tools/chrome-devtools/workspaces/
-- title: The Command Menu
+- title: Command Menu
   path: /web/tools/chrome-devtools/command-menu/
 - title: Progressive Web Apps
   path: /web/tools/chrome-devtools/progressive-web-apps

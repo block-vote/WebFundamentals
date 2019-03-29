@@ -2,11 +2,11 @@ project_path: /web/tools/_project.yaml
 book_path: /web/tools/_book.yaml
 description: TODO
 
-{# wf_updated_on: 2019-03-28 #}
-{# wf_published_on: 2019-03-28 #}
+{# wf_updated_on: 2019-03-29 #}
+{# wf_published_on: 2019-03-29 #}
 {# wf_blink_components: Platform>DevTools #}
 
-# The Command Menu In Chrome DevTools {: .page-title }
+# Chrome DevTools Command Menu Reference {: .page-title }
 
 {% include "web/_shared/contributors/kaycebasques.html" %}
 
@@ -38,6 +38,29 @@ then select **Run Command**.
        alt="Run Command."/>
   <figcaption>
     <b>Figure X</b>. Run Command.
+  </figcaption>
+</figure>
+
+## See other available shortcuts {: #help }
+
+If you use the workflow outlined in [Open the Command Menu](#open), the Command Menu opens
+with a `>` character prepended to the Command Menu text box.
+
+<figure>
+  <img src="/web/tools/chrome-devtools/command-menu/imgs/commandcharacter.png"
+       alt="The command character."/>
+  <figcaption>
+    <b>Figure X</b>. The command character.
+  </figcaption>
+</figure>
+
+Delete the `>` character and type `?` to see other shortcuts that are available from the Command Menu.
+
+<figure>
+  <img src="/web/tools/chrome-devtools/command-menu/imgs/shortcuts.png"
+       alt="Other available shortcuts."/>
+  <figcaption>
+    <b>Figure X</b>. Other available shortcuts.
   </figcaption>
 </figure>
 
