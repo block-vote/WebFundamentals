@@ -87,6 +87,30 @@ run the **Show Console** command that has the **Panel** badge next to it.
   </figcaption>
 </figure>
 
+### Open Console Settings {: #settings }
+
+[settings]: /web/tools/chrome-devtools/console/images/settingsbutton.png
+
+Click **Console Settings** ![Console Settings][settings]{: .inline-icon }.
+
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/consolesettings.png"
+       alt="Console Settings."/>
+  <figcaption>
+    <b>Figure X</b>. Console Settings.
+  </figcaption>
+</figure>
+
+The links below explain each setting:
+
+* [**Hide Network**](#network)
+* [**Preserve Log**](#persist)
+* [**Selected Context Only**](#filtercontext)
+* [**Group Similar**](#group)
+* [**Log XmlHttpRequests**](#xhr)
+* [**Eager Evaluation**](#eagereval)
+* [**Autocomplete From History**](#autocomplete)
+
 ## View messages {: #view }
 
 TODO this H2 may be unnecessary, but the "Run JS" one seems useful. So maybe convert
@@ -99,28 +123,9 @@ There are many ways to clear the Console:
 * Right-click the Console and then select **Clear Console**.
 * Type `clear()` in the Console and then press <kbd>Enter</kbd>.
 * Call `console.clear()` from your webpage's JavaScript.
-* Press <kbd>Control</kbd>+<kbd>L</kbd>.
+* Press <kbd>Control</kbd>+<kbd>L</kbd> while the Console is in focus.
 
-### Filter messages {: #filter }
-
-#### Filter out messages by URL {: #url }
-
-### Persist logs across page loads {: #persist }
-
-Enable the **Preserve log** checkbox at the top of the console to persist
-the console history between page refreshes or changes. Messages will be stored
-until you clear the Console or close the tab.
-
-### Save output {: #save }
-
-TODO should this be an H2 section?
-
-Right-click in the Console and select **Save as** to save the output
-of the console to a log file.
-
-![Save Console to log file](images/console-save-as.png)
-
-## Disable message stacking {: #stacking }
+### Group similar messages {: #group }
 
 If a message is consecutively repeated, rather than printing out each
 instance of the message on a new line, the Console "stacks" the messages
@@ -139,9 +144,57 @@ on its own line.
 
 ![Timestamped console](images/timestamped-console.png)
 
+### Log XHR and Fetch requests {: #xhr }
+
+### Filter messages {: #filter }
+
+#### Filter out messages by URL {: #url }
+
+#### Filter out messages from different contexts {: #filtercontext }
+
+### Persist messages across page loads {: #persist }
+
+By default the Console clears every time that you load a new page. To persist
+messages across page loads:
+
+1. [Open Console Settings](#settings).
+
+Enable the **Preserve log** checkbox at the top of the console to persist
+the console history between page refreshes or changes. Messages will be stored
+until you clear the Console or close the tab.
+
+### Save output {: #save }
+
+TODO should this be an H2 section?
+
+Right-click in the Console and select **Save as** to save the output
+of the console to a log file.
+
+![Save Console to log file](images/console-save-as.png)
+
+### Hide network messages {: #network }
+
+By default the browser logs network messages to the **Console**. For example, the top message
+in **Figure X** represents a 404.
+
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/404.png"
+       alt="A 404 message in the Console."/>
+  <figcaption>
+    <b>Figure X</b>. A 404 message in the Console.
+  </figcaption>
+</figure>
+
+To hide network messages:
+
+1. [Open Console Settings](#settings).
+1. Enable the **Hide Network** checkbox.
+
 ## Run JavaScript {: #js }
 
+### Disable Eager Evaluation {: #eagereval }
 
+### Disable autocomplete from history {: #autocomplete }
 
 ## Select execution context {: #context }
 
