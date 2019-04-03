@@ -2,11 +2,11 @@ project_path: /web/tools/_project.yaml
 book_path: /web/tools/_book.yaml
 description: A comprehensive reference on every feature and behavior related to the Console UI in Chrome DevTools.
 
-{# wf_updated_on: 2019-03-29 #}
-{# wf_published_on: 2015-03-29 #}
+{# wf_updated_on: 2019-04-03 #}
+{# wf_published_on: 2015-04-03 #}
 {# wf_blink_components: Platform>DevTools #}
 
-[commandmenu]: /web/tools/chrome-devtools/command-menu/#open
+[commandmenu]: /web/tools/chrome-devtools/command-menu/
 
 # Console UI Reference {: .page-title }
 

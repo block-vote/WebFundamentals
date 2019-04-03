@@ -2,7 +2,7 @@ project_path: /web/tools/_project.yaml
 book_path: /web/tools/_book.yaml
 description: TODO
 
-{# wf_updated_on: 2019-03-29 #}
+{# wf_updated_on: 2019-04-03 #}
 {# wf_published_on: 2019-03-29 #}
 {# wf_blink_components: Platform>DevTools #}
 
@@ -41,7 +41,7 @@ then select **Run Command**.
   </figcaption>
 </figure>
 
-## See other available shortcuts {: #help }
+## See other available actions {: #help }
 
 If you use the workflow outlined in [Open the Command Menu](#open), the Command Menu opens
 with a `>` character prepended to the Command Menu text box.
@@ -54,13 +54,13 @@ with a `>` character prepended to the Command Menu text box.
   </figcaption>
 </figure>
 
-Delete the `>` character and type `?` to see other shortcuts that are available from the Command Menu.
+Delete the `>` character and type `?` to see other actions that are available from the Command Menu.
 
 <figure>
-  <img src="/web/tools/chrome-devtools/command-menu/imgs/shortcuts.png"
-       alt="Other available shortcuts."/>
+  <img src="/web/tools/chrome-devtools/command-menu/imgs/actions.png"
+       alt="Other available actions."/>
   <figcaption>
-    <b>Figure X</b>. Other available shortcuts.
+    <b>Figure X</b>. Other available actions.
   </figcaption>
 </figure>
 
