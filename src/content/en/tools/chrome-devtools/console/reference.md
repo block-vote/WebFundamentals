@@ -2,25 +2,24 @@ project_path: /web/tools/_project.yaml
 book_path: /web/tools/_book.yaml
 description: A comprehensive reference on every feature and behavior related to the Console UI in Chrome DevTools.
 
-{# wf_updated_on: 2019-04-03 #}
+{# wf_updated_on: 2019-04-04 #}
 {# wf_published_on: 2015-04-03 #}
 {# wf_blink_components: Platform>DevTools #}
 
 [commandmenu]: /web/tools/chrome-devtools/command-menu/
 
-# Console UI Reference {: .page-title }
+# Console Reference {: .page-title }
 
 {% include "web/_shared/contributors/kaycebasques.html" %}
 
 [API]: /web/tools/chrome-devtools/console/api
 [utilities]: /web/tools/chrome-devtools/console/utilities
+[tutorial]: /web/tools/chrome-devtools/console/get-started
 
-This page is a comprehensive reference on the Console UI in Chrome DevTools. If you're looking for
-the API reference on functions like `console.log()` see [Console API Reference][API]. For the
-reference on functions like `monitorEvents()` see [Console Utilities API Reference][utilities].
-
-This page is organized according to the 2 main uses of the Console: [viewing messages](#view)
-and [running JavaScript](#js).
+This page is a comprehensive reference on the Console UI in Chrome DevTools. 
+See [Get Started][tutorial] for a hands-on walkthrough of using the Console to log messages and run JavaScript.
+If you're looking for the API reference on functions like `console.log()` see [Console API Reference][API].
+For the reference on functions like `monitorEvents()` see [Console Utilities API Reference][utilities].
 
 ## Open the Console {: #open }
 
@@ -114,7 +113,8 @@ The links below explain each setting:
 ## View messages {: #view }
 
 This section contains all features related to controlling how messages are presented in the
-Console.
+Console. See [Step 1: View messages](/web/tools/chrome-devtools/console/get-started#view) for a hands-on
+walkthrough.
 
 ### Disable message grouping {: #group }
 
@@ -207,14 +207,19 @@ a lot of messages in your Console. Because this ad is in a different [JavaScript
 context](#context), one way to hide its messages is to [open Console Settings](#settings)
 and enable the **Selected Context Only** checkbox.
 
-### Save output {: #save }
+#### Filter out messages that don't match a regular expression pattern {: #regex }
 
-TODO should this be an H2 section?
+Type a regular expression such as `/[gm][ta][mi]/` in the **Filter** text box to filter out
+any messages that don't match that pattern. DevTools checks if the pattern is found in the
+message text or the script that caused the message to be logged.
 
-Right-click in the Console and select **Save as** to save the output
-of the console to a log file.
-
-![Save Console to log file](images/console-save-as.png)
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/regexfilter.png"
+       alt="Filtering out any messages that don't match /[gm][ta][mi]/."/>
+  <figcaption>
+    <b>Figure X</b>. Filtering out any messages that don't match <code>/[gm][ta][mi]/</code>.
+  </figcaption>
+</figure>
 
 ### Hide network messages {: #network }
 
@@ -236,27 +241,31 @@ To hide network messages:
 
 ## Clear the Console {: #clear }
 
-There are many ways to clear the Console:
+You can use any of the following workflows to clear the Console:
 
-* Right-click the Console and then select **Clear Console**.
+[clear]: /web/tools/chrome-devtools/console/images/clearconsole.png
+
+* Click **Clear Console** ![Clear Console][clear]{: .inline-icon }.
+* Right-click a message and then select **Clear Console**. This option isn't visible if you
+  right-click the empty part of the Console, where messages haven't been logged yet.
 * Type `clear()` in the Console and then press <kbd>Enter</kbd>.
 * Call `console.clear()` from your webpage's JavaScript.
 * Press <kbd>Control</kbd>+<kbd>L</kbd> while the Console is in focus.
 
 ## Run JavaScript {: #js }
 
+This section contains all features related to running JavaScript in the Console.
+See [Step 2: Run JavaScript](/web/tools/chrome-devtools/console/get-started#javascript) for a hands-on
+walkthrough.
+
 ### Watch an expression's value in real-time with Live Expressions {: #live }
 
-TODO this should be a separate doc. Link off to it.
+[liveexpressions]: /web/tools/chrome-devtools/console/live-expressions
 
 If you find yourself typing the same JavaScript expression in the Console repeatedly, you might
-find it easier to create a **Live Expression**.
-
-**Live Expressions** enable you to monitor the value of a JavaScript expression in (near)
-real-time. 
-
-**Figure X** is an example of using a **Live Expression** to monitor the value of
-`document.activeElement` in real-time.
+find it easier to create a **Live Expression**. With **Live Expressions** you type an expression once
+and then pin it to the top of your Console. The value of the expression updates in near real-time.
+See [Watch JavaScript Expression Values In Real-Time With Live Expressions][liveexpressions].
 
 ### Disable Eager Evaluation {: #eagereval }
 
