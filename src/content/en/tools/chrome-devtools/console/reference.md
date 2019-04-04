@@ -77,7 +77,7 @@ The Drawer pops up at the bottom of your DevTools window, with the **Console** t
 </figure>
 
 To open the Console tab from the [Command Menu][commandmenu], start typing `Console` and then
-run the **Show Console** command that has the **Panel** badge next to it.
+run the **Show Console** command that has the **Drawer** badge next to it.
 
 <figure>
   <img src="/web/tools/chrome-devtools/console/images/showdrawercommand.png"
@@ -113,55 +113,99 @@ The links below explain each setting:
 
 ## View messages {: #view }
 
-TODO this H2 may be unnecessary, but the "Run JS" one seems useful. So maybe convert
-these sections into H2s.
+This section contains all features related to controlling how messages are presented in the
+Console.
 
-### Clear messages {: #clear }
+### Disable message grouping {: #group }
 
-There are many ways to clear the Console:
-
-* Right-click the Console and then select **Clear Console**.
-* Type `clear()` in the Console and then press <kbd>Enter</kbd>.
-* Call `console.clear()` from your webpage's JavaScript.
-* Press <kbd>Control</kbd>+<kbd>L</kbd> while the Console is in focus.
-
-### Group similar messages {: #group }
-
-If a message is consecutively repeated, rather than printing out each
-instance of the message on a new line, the Console "stacks" the messages
-and shows a number in the left margin instead. The number indicates how many
-times the message has repeated.
-
-![Message stacking](images/message-stacking.png)
-
-If you prefer a unique line entry for every log, enable **Show timestamps**
-from the DevTools settings.
-
-![Show timestamps](images/show-timestamps.png)
-
-Since the timestamp of each message is different, each message is displayed
-on its own line.
-
-![Timestamped console](images/timestamped-console.png)
+[Open Console Settings](#settings) and disable **Group similar** to disable the Console's
+default message grouping behavior. See [Log XHR and Fetch requests](#xhr) for an example.
 
 ### Log XHR and Fetch requests {: #xhr }
 
-### Filter messages {: #filter }
+[Open Console Settings](#settings) and enable **Log XMLHttpRequests** to log all
+`XMLHttpRequest` and `Fetch` requests to the Console as they happen.
 
-#### Filter out messages by URL {: #url }
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/xhrgrouped.png"
+       alt="Logging XMLHttpRequest and Fetch requests."/>
+  <figcaption>
+    <b>Figure X</b>. Logging <code>XMLHttpRequest</code> and <code>Fetch</code> requests.
+  </figcaption>
+</figure>
 
-#### Filter out messages from different contexts {: #filtercontext }
+The top message in **Figure X** shows the Console's default grouping behavior. **Figure X** shows
+how the same log looks after [disabling message grouping](#group).
+
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/xhrungrouped.png"
+       alt="How the logged XMLHttpRequest and Fetch requests look after ungrouping."/>
+  <figcaption>
+    <b>Figure X</b>. How the logged <code>XMLHttpRequest</code> and <code>Fetch</code> requests
+    look after ungrouping.
+  </figcaption>
+</figure>
 
 ### Persist messages across page loads {: #persist }
 
-By default the Console clears every time that you load a new page. To persist
-messages across page loads:
+By default the Console clears whenever you load a new page. To persist messages across page loads,
+[Open Console Settings](#settings) and then enable the **Preserve Log** checkbox.
 
-1. [Open Console Settings](#settings).
+### Filter messages {: #filter }
 
-Enable the **Preserve log** checkbox at the top of the console to persist
-the console history between page refreshes or changes. Messages will be stored
-until you clear the Console or close the tab.
+#### Filter by log level {: #level }
+
+DevTools assigns each `console.*` method a severity level. There are 4 levels: `Verbose`, `Info`,
+`Warning`, and `Error`. For example, `console.log()` is in the `Info` group, whereas
+`console.error()` is in the `Error` group. The [Console API Reference][API] describes the severity
+level of each applicable method. Every message that the browser logs to the Console has a 
+severity level too. You can hide any level of messages that you're not interested in.
+For example, if you're only interested in `Error` messages, you can hide the other 3 groups.
+
+Click the **Log Levels** dropdown to enable or disable `Verbose`, `Info`, `Warning` or 
+`Error` messages.
+
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/loglevels.png"
+       alt="The Log Levels dropdown."/>
+  <figcaption>
+    <b>Figure X</b>. The <b>Log Levels</b> dropdown.
+  </figcaption>
+</figure>
+
+#### Filter messages by URL {: #url }
+
+Type `url:` followed by a URL to only view messages that came from that URL.
+After you type `url:` DevTools shows all relevant URLs. Domains also work. For example, if
+`https://example.com/a.js` and `https://example.com/b.js` are logging messages,
+`url:https://example.com` enables you to focus on the messages from these 2 scripts.
+
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/urlfilter.png"
+       alt="A URL filter."/>
+  <figcaption>
+    <b>Figure X</b>. A URL filter.
+  </figcaption>
+</figure>
+
+Type `-url:` to hide messages from that URL. This is called a negative URL filter.
+
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/negativeurlfilter.png"
+       alt="A negative URL filter. DevTools is hiding all messages that match the URL
+            https://b.wal.co"/>
+  <figcaption>
+    <b>Figure X</b>. A negative URL filter. DevTools is hiding all messages that match the URL
+    <code>https://b.wal.co</code>.
+  </figcaption>
+</figure>
+
+#### Filter out messages from different contexts {: #filtercontext }
+
+Suppose that you've got an ad on your page. The ad is embedded in an `<iframe>` and is generating
+a lot of messages in your Console. Because this ad is in a different [JavaScript
+context](#context), one way to hide its messages is to [open Console Settings](#settings)
+and enable the **Selected Context Only** checkbox.
 
 ### Save output {: #save }
 
@@ -190,44 +234,39 @@ To hide network messages:
 1. [Open Console Settings](#settings).
 1. Enable the **Hide Network** checkbox.
 
+## Clear the Console {: #clear }
+
+There are many ways to clear the Console:
+
+* Right-click the Console and then select **Clear Console**.
+* Type `clear()` in the Console and then press <kbd>Enter</kbd>.
+* Call `console.clear()` from your webpage's JavaScript.
+* Press <kbd>Control</kbd>+<kbd>L</kbd> while the Console is in focus.
+
 ## Run JavaScript {: #js }
+
+### Watch an expression's value in real-time with Live Expressions {: #live }
+
+TODO this should be a separate doc. Link off to it.
+
+If you find yourself typing the same JavaScript expression in the Console repeatedly, you might
+find it easier to create a **Live Expression**.
+
+**Live Expressions** enable you to monitor the value of a JavaScript expression in (near)
+real-time. 
+
+**Figure X** is an example of using a **Live Expression** to monitor the value of
+`document.activeElement` in real-time.
 
 ### Disable Eager Evaluation {: #eagereval }
 
 ### Disable autocomplete from history {: #autocomplete }
 
-## Select execution context {: #context }
-
-The dropdown menu highlighted in blue in the screenshot below is called the
-**Execution Context Selector**.
-
-![Execution Context Selector](images/execution-context-selector.png)
-
-You'll usually see the context set to `top` (the top frame of the page).
-
-Other frames and extensions operate in their own context. To work with these
-other contexts you need to select them from the dropdown menu. For example,
-if you wanted to see the logging output of an `<iframe>` element and modify
-a variable that exists within that context, you'd need to select it from
-the Execution Context Selector dropdown menu.
-
-The Console defaults to the `top` context, unless you access DevTools by
-inspecting an element within another context. For example, if you inspect
-a `<p>` element within an `<iframe>`, then DevTools sets the Execution Context
-Selector to the context of that `<iframe>`.
-
-When you're working in a context other than `top`, DevTools highlights the
-Execution Context Selector red, as in the screenshot below. This is because
-developers rarely need to work in any context other than `top`. It can
-be pretty confusing to type in a variable, expecting a value, only to see that
-it's `undefined` (because it's defined in a different context).
+### Select JavaScript context {: #context }
 
 ![Execution Context Selector highlighted red](images/non-top-context.png)
 
-## Settings {: #settings }
 
-TODO cover each setting. Don't have a separate section, like this. Discuss
-settings in the context of tasks.
 
 ## Feedback {: #feedback }
 
