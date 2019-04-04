@@ -119,12 +119,14 @@ toc:
     path: /web/tools/chrome-devtools/console/
   - title: Get Started
     path: /web/tools/chrome-devtools/console/get-started
-  - title: UI Reference
+  - title: Reference
     path: /web/tools/chrome-devtools/console/reference
   - title: API Reference
     path: /web/tools/chrome-devtools/console/api
   - title: Utilities API Reference
     path: /web/tools/chrome-devtools/console/utilities
+  - title: Live Expressions
+    path: /web/tools/chrome-devtools/console/live-expressions
   - title: Deprecated
     section:
     - title: Diagnose and Log to the Console
