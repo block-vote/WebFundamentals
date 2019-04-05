@@ -16,8 +16,10 @@ description: A comprehensive reference on every feature and behavior related to 
 [utilities]: /web/tools/chrome-devtools/console/utilities
 [tutorial]: /web/tools/chrome-devtools/console/get-started
 
-This page is a comprehensive reference on the Console UI in Chrome DevTools. 
-See [Get Started][tutorial] for a hands-on walkthrough of using the Console to log messages and run JavaScript.
+This page is a comprehensive reference of features related to the Chrome DevTools Console. It assumes
+that you're already familiar with using the Console to view logged messages and run JavaScript. If not, see
+[Get Started][tutorial].
+
 If you're looking for the API reference on functions like `console.log()` see [Console API Reference][API].
 For the reference on functions like `monitorEvents()` see [Console Utilities API Reference][utilities].
 
@@ -113,7 +115,7 @@ The links below explain each setting:
 ## View messages {: #view }
 
 This section contains all features related to controlling how messages are presented in the
-Console. See [Step 1: View messages](/web/tools/chrome-devtools/console/get-started#view) for a hands-on
+Console. See [View messages](/web/tools/chrome-devtools/console/get-started#view) for a hands-on
 walkthrough.
 
 ### Disable message grouping {: #group }
@@ -151,7 +153,27 @@ how the same log looks after [disabling message grouping](#group).
 By default the Console clears whenever you load a new page. To persist messages across page loads,
 [Open Console Settings](#settings) and then enable the **Preserve Log** checkbox.
 
+### Hide network messages {: #network }
+
+By default the browser logs network messages to the **Console**. For example, the top message
+in **Figure X** represents a 404.
+
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/404.png"
+       alt="A 404 message in the Console."/>
+  <figcaption>
+    <b>Figure X</b>. A 404 message in the Console.
+  </figcaption>
+</figure>
+
+To hide network messages:
+
+1. [Open Console Settings](#settings).
+1. Enable the **Hide Network** checkbox.
+
 ### Filter messages {: #filter }
+
+There are many ways to filter out messages in the Console.
 
 #### Filter by log level {: #level }
 
@@ -221,23 +243,71 @@ message text or the script that caused the message to be logged.
   </figcaption>
 </figure>
 
-### Hide network messages {: #network }
+## Run JavaScript {: #js }
 
-By default the browser logs network messages to the **Console**. For example, the top message
-in **Figure X** represents a 404.
+This section contains all features related to running JavaScript in the Console.
+See [Run JavaScript](/web/tools/chrome-devtools/console/get-started#javascript) for a hands-on
+walkthrough.
+
+### Re-run expressions from history {: #history }
+
+Press the <kbd>Up Arrow</kbd> key to cycle through the history of JavaScript expressions that you ran
+earlier in the Console. Press <kbd>Enter</kbd> to run that expression again.
+
+### Watch an expression's value in real-time with Live Expressions {: #live }
+
+[liveexpressions]: /web/tools/chrome-devtools/console/live-expressions
+
+If you find yourself typing the same JavaScript expression in the Console repeatedly, you might
+find it easier to create a **Live Expression**. With **Live Expressions** you type an expression once
+and then pin it to the top of your Console. The value of the expression updates in near real-time.
+See [Watch JavaScript Expression Values In Real-Time With Live Expressions][liveexpressions].
+
+### Disable Eager Evaluation {: #eagereval }
+
+As you type JavaScript expressions in the Console, **Eager Evaluation** shows a preview of that expression's
+return value. [Open Console Settings](#settings) and disable the **Eager Evaluation** checkbox to turn off
+the return value previews.
+
+### Disable autocomplete from history {: #autocomplete }
+
+As you type out an expression, the Console's autocomplete popup shows expressions that you ran earlier. These
+expressions are prepended with the `>` character. [Open Console Settings](#settings) and disable the
+**Autocomplete From History** checkbox to stop showing expressions from your history.
 
 <figure>
-  <img src="/web/tools/chrome-devtools/console/images/404.png"
-       alt="A 404 message in the Console."/>
+  <img src="/web/tools/chrome-devtools/console/images/historyautocomplete.png"
+       alt="The autocomplete popup showing expressions from history."/>
   <figcaption>
-    <b>Figure X</b>. A 404 message in the Console.
+    <b>Figure X</b>. <code>document.querySelector('a')</code> and <code>document.querySelector('img')</code>
+    are expressions that were evaluated earlier.
   </figcaption>
 </figure>
 
-To hide network messages:
+### Select JavaScript context {: #context }
 
-1. [Open Console Settings](#settings).
-1. Enable the **Hide Network** checkbox.
+By default the **JavaScript Context** dropdown is set to **top**, which represents the
+main document's [browsing context](https://developer.mozilla.org/en-US/docs/Glossary/Browsing_context){: .external }.
+
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/jscontext.png"
+       alt="The JavaScript Context dropdown."/>
+  <figcaption>
+    <b>Figure X</b>. The <b>JavaScript Context</b> dropdown.
+  </figcaption>
+</figure>
+
+Suppose you have an ad on your page embedded in an `<iframe>`. You want to run JavaScript in order
+to tweak the ad's DOM. To do this, you first need to select the ad's browsing context from the
+**JavaScript Context** dropdown.
+
+<figure>
+  <img src="/web/tools/chrome-devtools/console/images/selectcontext.png"
+       alt="Selecting a different JavaScript context."/>
+  <figcaption>
+    <b>Figure X</b>. Selecting a different JavaScript context.
+  </figcaption>
+</figure>
 
 ## Clear the Console {: #clear }
 
@@ -251,31 +321,6 @@ You can use any of the following workflows to clear the Console:
 * Type `clear()` in the Console and then press <kbd>Enter</kbd>.
 * Call `console.clear()` from your webpage's JavaScript.
 * Press <kbd>Control</kbd>+<kbd>L</kbd> while the Console is in focus.
-
-## Run JavaScript {: #js }
-
-This section contains all features related to running JavaScript in the Console.
-See [Step 2: Run JavaScript](/web/tools/chrome-devtools/console/get-started#javascript) for a hands-on
-walkthrough.
-
-### Watch an expression's value in real-time with Live Expressions {: #live }
-
-[liveexpressions]: /web/tools/chrome-devtools/console/live-expressions
-
-If you find yourself typing the same JavaScript expression in the Console repeatedly, you might
-find it easier to create a **Live Expression**. With **Live Expressions** you type an expression once
-and then pin it to the top of your Console. The value of the expression updates in near real-time.
-See [Watch JavaScript Expression Values In Real-Time With Live Expressions][liveexpressions].
-
-### Disable Eager Evaluation {: #eagereval }
-
-### Disable autocomplete from history {: #autocomplete }
-
-### Select JavaScript context {: #context }
-
-![Execution Context Selector highlighted red](images/non-top-context.png)
-
-
 
 ## Feedback {: #feedback }
 
